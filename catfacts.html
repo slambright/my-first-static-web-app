@@ -62,7 +62,7 @@
             const imageResponse = await fetch('https://api.thecatapi.com/v1/images/search?mime_types=gif');
             const imageData = await imageResponse.json();
             const imageElement = document.getElementById('cat-image');
-            imageElement.src = imageData.url;
+            imageElement.src = imageData[0].url;
         }
     </script>
 </body>

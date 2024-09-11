@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Facts and GIFs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .cat-fact {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .cat-image {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Cat Facts and GIFs</h1>
+        <button onclick="getCatFact()">Get a Cat Fact</button>
+        <p class="cat-fact" id="cat-fact"></p>
+        <img class="cat-image" id="cat-image" src="" alt="Random Cat Image">
+    </div>
+
+    <script>
+        async function getCatFact() {
+            const factResponse = await fetch('https://catfact.ninja/fact');
+            const factData = await factResponse.json();
+            const factElement = document.getElementById('cat-fact');
+            factElement.textContent = factData.fact;
+
+            const imageResponse = await fetch('https://api.thecatapi.com/v1/images/search?mime_types=gif');
+            const imageData = await imageResponse.json();
+            const imageElement = document.getElementById('cat-image');
+            imageElement.src = imageData.url;
+        }
+    </script>
+</body>
+</html>

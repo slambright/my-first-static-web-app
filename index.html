@@ -1,6 +1,60 @@
-<ul></ul>
-    <li><a href="joke.html">Joke Generator</a></li>
-    <li><a href="weather.html">Weather</a></li>
-    <li><a href="uvindex.html">UV Index</a></li>
-    <li><a href="catfacts.html">Cat Facts</a></li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Web Apps</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffcc33, #ff66cc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background: #007BFF;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            transition: background 0.3s, transform 0.3s;
+        }
+        a:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Web Apps</h1>
+        <div class="links">
+            <a href="catfacts.html">Cat Facts</a>
+            <a href="joke.html">Random Jokes</a>
+            <a href="uvindex.html">UV Index Checker</a>
+            <a href="weather.html">Weather App</a>
+        </div>
+    </div>
+</body>
+</html>
